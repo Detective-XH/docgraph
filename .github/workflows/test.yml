@@ -20,7 +20,7 @@ jobs:
         go: ['stable']
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-go@v6
+      - uses: actions/setup-go@v7
         with:
           go-version: ${{ matrix.go }}
       - run: go mod verify
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-go@v6
+      - uses: actions/setup-go@v7
         with:
           go-version: 'stable'
       - name: Check gofmt
@@ -48,7 +48,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-go@v6
+      - uses: actions/setup-go@v7
         with:
           go-version: 'stable'
       - run: go install golang.org/x/vuln/cmd/govulncheck@latest
@@ -64,7 +64,7 @@ jobs:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0  # full history so --new-from-rev can diff against the PR base
-      - uses: actions/setup-go@v6
+      - uses: actions/setup-go@v7
         with:
           go-version: 'stable'
       # Pinned go install instead of golangci-lint-action: no third-party JS action
@@ -81,7 +81,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-go@v6
+      - uses: actions/setup-go@v7
         with:
           go-version: 'stable'
       - run: go install github.com/CycloneDX/cyclonedx-gomod/cmd/cyclonedx-gomod@latest
